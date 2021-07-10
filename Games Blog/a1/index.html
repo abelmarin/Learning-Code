@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <style>
+    body {
+        font: 1.1rem arial, sans-serif;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+
+    .gameArea {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    canvas {
+        margin: auto;
+        background-color: #4267B2;
+        border: 1px solid black;
+    }
+
+    /* Format the form elements */
+    form {
+        padding-top: 1rem;
+        font-size: 1.3rem;
+    }
+
+    form h2 {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+
+    /* Format the footer */
+    footer {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    </style>
+    <title>Assignment 1</title>
+</head>
+<body>
+
+    <h1>8-Puzzle!</h1>
+    
+    <div class="gameArea">
+    <!-- Create the canvas of the game -->
+    <canvas id="eightPuzzle" width="450" height="450"></canvas>
+
+    <form>
+
+        <!-- Creates the radio buttons for choosing which input to run -->
+        <h2>Choose an Input to Run:</h2>
+        <label for="goal">Goal:</label>
+            <input type="radio" name="input" id="radGoal"><br>
+        <label for="easy">Easy:</label>
+            <input type="radio" name="input" id="radEasy"><br>
+        <label for="medium">Medium:</label>
+            <input type="radio" name="input" id="radMedium"><br>
+        <label for="hard">Hard:</label>
+            <input type="radio" name="input" id="radHard"><br><br>
+
+        <!-- Creates buttons which sets the input -->
+        <button type="button" onclick="setInput()">Set the Input!</button>
+
+        <!-- Creates the radio buttons for choosing which algorithm to run -->
+        <h2>Choose an Algorithm:</h2>
+        <label for="breadthFirst">Breadth-First:</label>
+            <input type="radio" name="algorithm" id="breadthFirst"><br>
+        <label for="depthFirst">Depth-First:</label>
+            <input type="radio" name="algorithm" id="depthFirst"><br>
+        <label for="uniformCost">Uniform Cost:</label>
+           <input type="radio" name="algorithm" id="uniformCost"><br>
+        <label for="bestFirst">Best-First:</label>
+            <input type="radio" name="algorithm" id="bestFirst"><br>
+        <label for="aStarCorrectPosition">A* Correct Position:</label>
+            <input type="radio" name="algorithm" id="aStarCorrectPosition"><br>
+        <label for="aStarManhattan">A* Manhattan:</label>
+            <input type="radio" name="algorithm" id="aStarManhattan"><br><br>
+        
+
+        <!-- Creates button which runs the algorithm on the specified input -->
+        <button type="button" onclick="runTheAlgorithm()">Run the Algorithm!</button>
+        
+        <!-- Displays the input in list form -->
+        <p><div id="inputDiv"></div></p>
+
+        <!-- Displays the output in list form -->
+        <p><div id="inputDiv"></div></p>
+    </form>
+
+    </div>  
+
+    <footer>
+        <p>an Abel Marin production <br>
+            <a href="#">Video</a>
+            <a href="#">Write Up</a>
+        </p>
+        
+    </footer>
+    <script type="text/javascript" src="puzzle.js"></script>
+</body>
+</html>
